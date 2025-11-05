@@ -1,32 +1,106 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title> My portfolio </title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <header>
-            <h1> Soundarya S </h1>
-            <p> Aspiring developer </p>
-        </header>
-        <section id="about" class="box">
-            <h2> About me </h2>
-            <p> I am learning coding and building projects.</p>
-        </section>
-        <section id="skills">
-            <h2> Skills </h2>
-            <ul>
-                <li> Python </li>
-                <li> HTML and CSS </li>
-                <li> SQL </li>
-            </ul>
-        </section>
-        <section id="projects">
-            <h2> Projects </h2>
-            <p> Smart water managment system </p>
-        </section>
-        <fotter>
-            <a href="mailtp:soundusoundary646@gmail.com"> soundusoundary646@gmail.com</a>
-        </fotter>
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soundarya | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="hero-box">
+      <img src="./s.jpg" class="profile-img" alt="profile">
+
+      <h1>Hello, I'm <span class="highlight">Soundarya S </span></h1>
+      <h3 class="typing"></h3>
+
+      <div class="social">
+        <a href="#"><span class="material-icons-outlined">mail</span></a>
+        <a href="#"><span class="material-icons-outlined">code</span></a>
+        <a href="#"><span class="material-icons-outlined">public</span></a>
+      </div>
+
+      <a href="#projects" class="btn">Explore Projects</a>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="box" id="about">
+    <h2>About Me</h2>
+    <p>
+      I am currently pursuing in 2 year BCA, in BIMSR University.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="box" id="skills">
+    <h2>Skills</h2>
+
+    <div class="skill">
+      <span>Java Script</Script></span>
+      <div class="bar"><div style="width: 85%;"></div></div>
+    </div>
+
+    <div class="skill">
+      <span>HTML & CSS</span>
+      <div class="bar"><div style="width: 90%;"></div></div>
+    </div>
+
+    <div class="skill">
+      <span>SQL</span>
+      <div class="bar"><div style="width: 70%;"></div></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="box" id="projects">
+    <h2>Projects</h2>
+
+    <div class="project-card">
+      <h3> Calculator </h3>
+      <p>Uses to calculate the basic mathematics.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>Personal portfolio built using HTML, CSS and JavaScript.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Contact: <a href="mailto:soundusoundary646@gmail.com">soundusoundary646@gmail.com</a></p>
+    <p>© 2025 | Designed by soundarya</p>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    const text = ["Aspiring Developer", "Problem Solver", "Coder"];
+    let index = 0;
+    let charIndex = 0;
+
+    function typeWriter() {
+      let typingElement = document.querySelector(".typing");
+      if (charIndex < text[index].length) {
+        typingElement.innerHTML += text[index].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeWriter, 100);
+      } else {
+        setTimeout(() => {
+          typingElement.innerHTML = "";
+          charIndex = 0;
+          index = (index + 1) % text.length;
+          typeWriter();
+        }, 1200);
+      }
+    }
+
+    typeWriter();
+  </script>
+</body>
 </html>
